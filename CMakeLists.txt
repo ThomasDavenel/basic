@@ -5,7 +5,7 @@ set(basic_VERSION 1.0.0)
 project(basic
 	VERSION ${basic_VERSION}
 	DESCRIPTION "A simple utf-8 based unicode decoding and encoding library"
-	HOMEPAGE_URL "https://github.com/northwindtraders/basic"
+	HOMEPAGE_URL "https://github.com/ThomasDavenel/basic"
 	LANGUAGES CXX)
 
 include(CMakePackageConfigHelpers)
@@ -34,7 +34,7 @@ install(
 	DESTINATION
 		${CMAKE_INSTALL_DATADIR}/basic)
 
-install(TARGETS basic EXPORT basic-targets)set_target_properties(basic PROPERTIES PUBLIC_HEADER "src/basic.h")
+set_target_properties(basic PROPERTIES PUBLIC_HEADER "src/basic.h")
 
 install(TARGETS basic DESTINATION "."
         PUBLIC_HEADER DESTINATION include
