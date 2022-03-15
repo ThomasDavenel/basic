@@ -34,13 +34,8 @@ install(
 	DESTINATION
 		${CMAKE_INSTALL_DATADIR}/basic)
 
-set_target_properties(basic PROPERTIES PUBLIC_HEADER "src/basic.h")
-
-install(TARGETS basic DESTINATION "."
-        PUBLIC_HEADER DESTINATION include
-        RUNTIME DESTINATION bin
-        ARCHIVE DESTINATION lib
-        LIBRARY DESTINATION lib
-        )
-
+install(TARGETS basic EXPORT ".")
 install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+install(EXPORT "."
+	NAMESPACE basic::
+	DESTINATION ${CMAKE_INSTALL_DATADIR}/basic)
