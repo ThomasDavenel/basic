@@ -12,13 +12,6 @@ include(CMakePackageConfigHelpers)
 include(GNUInstallDirs)
 
 add_library(basic src/basic.cpp include/basic.h)
-add_library(basic::basic ALIAS basic)
-
-if(BUILD_SHARED_LIBS AND WIN32)
-	target_compile_definitions(basic
-		PRIVATE "BASIC_EXPORT=__declspec(dllexport)"
-		INTERFACE "BASIC_EXPORT=__declspec(dllimport)")
-endif()
 
 target_compile_features(basic PUBLIC cxx_std_17)
 target_include_directories(basic
