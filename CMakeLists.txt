@@ -13,6 +13,10 @@ include(GNUInstallDirs)
 
 add_library(basic src/basic.cpp include/basic.h)
 
+target_compile_definitions(basic
+		PRIVATE "BASIC_EXPORT=__declspec(dllexport)"
+		INTERFACE "BASIC_EXPORT=__declspec(dllimport)")
+
 target_compile_features(basic PUBLIC cxx_std_17)
 target_include_directories(basic
 	PUBLIC
