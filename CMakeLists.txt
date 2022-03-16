@@ -37,9 +37,8 @@ install(
 	DESTINATION
 		${CMAKE_INSTALL_DATADIR}/basic)
 
-install(TARGETS basic DESTINATION "."
-        RUNTIME DESTINATION bin
-        ARCHIVE DESTINATION lib
-        LIBRARY DESTINATION lib
-		)
+install(TARGETS corebox EXPORT corebox-targets)
 install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+install(EXPORT corebox-targets
+	NAMESPACE corebox::
+	DESTINATION ${CMAKE_INSTALL_DATADIR}/corebox)
