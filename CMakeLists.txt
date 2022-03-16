@@ -4,7 +4,7 @@ set(basic_VERSION 1.0.0)
 
 project(basic
 	VERSION ${basic_VERSION}
-	DESCRIPTION "A simple utf-8 based unicode decoding and encoding library"
+	DESCRIPTION "A simple Library"
 	HOMEPAGE_URL "https://github.com/ThomasDavenel/basic"
 	LANGUAGES CXX)
 
@@ -34,8 +34,8 @@ install(
 	DESTINATION
 		${CMAKE_INSTALL_DATADIR}/basic)
 
-install(TARGETS basic EXPORT basic-targets)
+install(TARGETS basic EXPORT ${CMAKE_INSTALL_DATADIR}/basic/bin)
 install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
-install(EXPORT basic-targets
+install(EXPORT ${CMAKE_INSTALL_DATADIR}/basic/bin
 	NAMESPACE basic::
 	DESTINATION ${CMAKE_INSTALL_DATADIR}/basic)
