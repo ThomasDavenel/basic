@@ -5,8 +5,6 @@ project(basic)
 add_compile_definitions(COREBOX_EXPORT)
 add_compile_definitions(_USE_MATH_DEFINES)
 
-find_package(Qt5 CONFIG REQUIRED Core)
-
 set(basic_VERSION 1.0.0)
 
 project(basic
@@ -39,10 +37,6 @@ target_include_directories(basic
 	PUBLIC
 		$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
 		$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
-		
-target_precompile_headers(basic PUBLIC ${CMAKE_SOURCE_DIR}/include/basic/basic.h) # PUBLIC will make it used by targets using this target
-
-target_link_libraries(basic PUBLIC Qt5::Core)
 
 configure_package_config_file(cmake/config.cmake.in
 	${CMAKE_CURRENT_BINARY_DIR}/basic-config.cmake
