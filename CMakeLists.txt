@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
+project(basic)
 
 set(basic_VERSION 1.0.0)
 
