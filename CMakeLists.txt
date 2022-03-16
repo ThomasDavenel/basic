@@ -36,6 +36,3 @@ install(
 
 install(TARGETS basic DESTINATION lib)
 install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
-install(EXPORT basic-targets
-	NAMESPACE basic::
-	DESTINATION ${CMAKE_INSTALL_DATADIR}/basic)
