@@ -14,7 +14,7 @@ include(CMakePackageConfigHelpers)
 include(GNUInstallDirs)
 
 add_library(basic src/basic.cpp include/basic.h)
-add_library(corebox::basic ALIAS basic)
+add_library(basic::basic ALIAS basic)
 
 target_compile_features(basic PUBLIC cxx_std_17)
 target_include_directories(basic
@@ -37,8 +37,8 @@ install(
 	DESTINATION
 		${CMAKE_INSTALL_DATADIR}/basic)
 
-install(TARGETS corebox EXPORT corebox-targets)
+install(TARGETS basic EXPORT basic-targets)
 install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
-install(EXPORT corebox-targets
-	NAMESPACE corebox::
-	DESTINATION ${CMAKE_INSTALL_DATADIR}/corebox)
+install(EXPORT basic-targets
+	NAMESPACE basic::
+	DESTINATION ${CMAKE_INSTALL_DATADIR}/basic)
