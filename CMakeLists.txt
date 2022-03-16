@@ -1,4 +1,5 @@
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.0)
+set(CMAKE_TOOLCHAIN_FILE "C:/vcpkg/scripts/buildsystems/vcpkg.cmake" )
 project(basic)
 
 set(basic_VERSION 1.0.0)
@@ -13,6 +14,7 @@ include(CMakePackageConfigHelpers)
 include(GNUInstallDirs)
 
 add_library(basic src/basic.cpp include/basic.h)
+add_library(corebox::basic ALIAS basic)
 
 target_compile_features(basic PUBLIC cxx_std_17)
 target_include_directories(basic
