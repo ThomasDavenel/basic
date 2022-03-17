@@ -2,9 +2,6 @@ cmake_minimum_required(VERSION 3.0)
 set(CMAKE_TOOLCHAIN_FILE "C:/vcpkg/scripts/buildsystems/vcpkg.cmake" )
 project(basic)
 
-add_compile_definitions(COREBOX_EXPORT)
-add_compile_definitions(_USE_MATH_DEFINES)
-
 set(basic_VERSION 1.0.0)
 
 project(basic
